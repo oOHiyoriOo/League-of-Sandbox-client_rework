@@ -28,7 +28,7 @@ Ein Client für den League Sandbox Server mit folgenden (teilweise erst geplante
 * ~~[Js](https://de.wikipedia.org/wiki/JavaScript) - Hilft bei der verbindung von html und c# (außerdem einige funktionen).~~
 * ~~[c#](https://de.wikipedia.org/wiki/C-Sharp) - Hauptfunktionen und der "Rahmen" des programmes.~~
 
-* [Visual Basic](https://de.wikipedia.org/wiki/Visual_Basic)
+* [Visual Basic](https://de.wikipedia.org/wiki/Visual_Basic) - Kompletter programm Ablauf + Design
 ### Installation
 
 ```sh
