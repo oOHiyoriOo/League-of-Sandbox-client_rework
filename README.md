@@ -23,11 +23,11 @@ Ein Client für den League Sandbox Server mit folgenden (teilweise erst geplante
 > Syncx#3238
 
 ### Genutzte Sprachen
-~~
-* [Html](https://de.wikipedia.org/wiki/Hypertext_Markup_Language) - Für das Design.
-* [Js](https://de.wikipedia.org/wiki/JavaScript) - Hilft bei der verbindung von html und c# (außerdem einige funktionen).
-* [c#](https://de.wikipedia.org/wiki/C-Sharp) - Hauptfunktionen und der "Rahmen" des programmes.
-~~
+
+* ~~[Html](https://de.wikipedia.org/wiki/Hypertext_Markup_Language) - Für das Design.~~
+* ~~[Js](https://de.wikipedia.org/wiki/JavaScript) - Hilft bei der verbindung von html und c# (außerdem einige funktionen).~~
+* ~~[c#](https://de.wikipedia.org/wiki/C-Sharp) - Hauptfunktionen und der "Rahmen" des programmes.~~
+
 * [Visual Basic](https://de.wikipedia.org/wiki/Visual_Basic)
 ### Installation
 
