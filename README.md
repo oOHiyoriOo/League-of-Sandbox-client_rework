@@ -12,7 +12,7 @@ Ein Client für den League Sandbox Server mit folgenden (teilweise erst geplante
 
 
 # Team:
-## Team Makiert mit Discord Taggs
+###### (Team Makiert mit Discord Taggs)
 > Development:
 > [Zero Two#5019](https://discord.gg/yxh7wpR),
 > [KdaAhri](https://twitter.com/kdaahri)
