@@ -30,6 +30,9 @@ Partial Class Form1
         Me.username = New System.Windows.Forms.TextBox()
         Me.password = New System.Windows.Forms.TextBox()
         Me.Login = New System.Windows.Forms.Button()
+        Me.server = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.register = New System.Windows.Forms.Label()
         Me.Lg_Bg.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -40,6 +43,7 @@ Partial Class Form1
         Me.Lg_Bg.BackColor = System.Drawing.Color.Transparent
         Me.Lg_Bg.BackgroundImage = CType(resources.GetObject("Lg_Bg.BackgroundImage"), System.Drawing.Image)
         Me.Lg_Bg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Lg_Bg.Controls.Add(Me.register)
         Me.Lg_Bg.Controls.Add(Me.GroupBox1)
         Me.Lg_Bg.Controls.Add(Me.Login)
         Me.Lg_Bg.Location = New System.Drawing.Point(499, -10)
@@ -51,15 +55,17 @@ Partial Class Form1
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.server)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.username)
         Me.GroupBox1.Controls.Add(Me.password)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.BlanchedAlmond
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 211)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 144)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(324, 176)
+        Me.GroupBox1.Size = New System.Drawing.Size(324, 243)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Login"
@@ -86,6 +92,7 @@ Partial Class Form1
         '
         'username
         '
+        Me.username.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.username.Location = New System.Drawing.Point(38, 61)
         Me.username.Name = "username"
         Me.username.Size = New System.Drawing.Size(206, 26)
@@ -93,6 +100,7 @@ Partial Class Form1
         '
         'password
         '
+        Me.password.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.password.Location = New System.Drawing.Point(38, 132)
         Me.password.Name = "password"
         Me.password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -117,6 +125,36 @@ Partial Class Form1
         Me.Login.Text = "Login"
         Me.Login.UseVisualStyleBackColor = True
         '
+        'server
+        '
+        Me.server.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.server.Location = New System.Drawing.Point(38, 199)
+        Me.server.Name = "server"
+        Me.server.Size = New System.Drawing.Size(206, 26)
+        Me.server.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(37, 183)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(38, 13)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Server"
+        '
+        'register
+        '
+        Me.register.AutoSize = True
+        Me.register.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.register.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.register.ForeColor = System.Drawing.SystemColors.Info
+        Me.register.Location = New System.Drawing.Point(109, 439)
+        Me.register.Name = "register"
+        Me.register.Size = New System.Drawing.Size(107, 20)
+        Me.register.TabIndex = 6
+        Me.register.Text = "Registrieren"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -133,6 +171,7 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "League of Sandbox Client"
         Me.Lg_Bg.ResumeLayout(False)
+        Me.Lg_Bg.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -146,4 +185,7 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents server As TextBox
+    Friend WithEvents register As Label
 End Class
