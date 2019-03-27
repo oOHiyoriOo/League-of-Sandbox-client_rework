@@ -1,39 +1,36 @@
 
 # Leaue_sandbox_client
 
-Ein Client für den League Sandbox Server mit folgenden (teilweise erst geplante) Features
-  - Login mit Name und Password
-  - Eigener Login Screen
-  - Lobbys
+## Planned Features:
+  - Login
+  - Custom Server Connections
 
-# Status:
-  -Login wird gerade überarbeitet ( Der Server wird so gleich wie möglich gehalten damit der neue client auch mit einer älteren version kompatibel ist)
+## Status:
+  - Login: The server was also reworked due to some errors so there's a new finished login
   
 
 
-# Team:
-###### (Team Makiert mit Discord Taggs)
+## Team:
 > Development:
 > [Zero Two#5019](https://discord.gg/yxh7wpR),
 > [KdaAhri](https://twitter.com/kdaahri)
 
-> Design und Ideen:
+> Design and Ideas:
 > FoxBox#3774
 
-> Tests und Prüfung:
+> Tests and testing:
 > Syncx#3238
 
-### Genutzte Sprachen
+### used leanguages:
 
 * ~~[Html](https://de.wikipedia.org/wiki/Hypertext_Markup_Language) - Für das Design.~~
 * ~~[Js](https://de.wikipedia.org/wiki/JavaScript) - Hilft bei der verbindung von html und c# (außerdem einige funktionen).~~
 * ~~[c#](https://de.wikipedia.org/wiki/C-Sharp) - Hauptfunktionen und der "Rahmen" des programmes.~~
-
-* [Visual Basic](https://de.wikipedia.org/wiki/Visual_Basic) - Kompletter programm Ablauf + Design
+* ~~[Visual Basic](https://de.wikipedia.org/wiki/Visual_Basic) - Kompletter programm Ablauf + Design~~
+* [C-Sharp](https://de.wikipedia.org/wiki/C-Sharp) - Programm is now in C-Sharp
 ### Installation
 
 ```sh
-Derzeit gibt es KEIN Release daher auch keine installation ( keine offizielle)
-Wer einfach mal einene blick drauf werfen will kann in den "Bin/debug" ordner gehen dort liegt eine exe :)
+Currently there's no release but u can take a look into /bin/debug/ there should be an .exe file
 ```
 
