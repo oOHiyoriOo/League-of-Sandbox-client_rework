@@ -116,5 +116,10 @@ namespace Client
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-    }
+
+		private void _honor_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
