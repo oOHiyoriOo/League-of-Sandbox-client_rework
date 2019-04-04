@@ -2,11 +2,14 @@
 # Leaue_sandbox_client
 
 ## Planned Features:
-  - Login
-  - Custom Server Connections
+  - ~~Login~~
+  - ~~Custom Server Connections~~
+  - Queue
+  - Game start
 
 ## Status:
   - Login: The server was also reworked due to some errors so there's a new finished login
+  - Server: Iam working in queues currently
   
 
 
