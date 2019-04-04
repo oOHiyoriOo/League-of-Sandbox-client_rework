@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using System.Net.Http;
 using Flurl.Http;
 using Newtonsoft.Json.Linq;
+using System.Net.Sockets;
 
 namespace Client
 {
@@ -75,26 +76,42 @@ namespace Client
                 }
                 if(cont == true) {
                     string url = Globals.server + "/api/?api=login";
-                    var responseString = url
-					    .PostUrlEncodedAsync(new { name = Globals.nickname, password = Globals.password })
-					    .ReceiveString();
-
-                    dynamic data = JObject.Parse(responseString.Result);
-				    string status = data.Status;
-				    if (status == "200")
-				    {
-					    Globals.cookie = data.id;
-					    error_field.Text = "Logged in!";
-					    error_field.ForeColor = System.Drawing.Color.Green;
-                        Hide();
-                        Form2 frm2 = new Form2();
-                        frm2.Show();
-				    } 
-				    else { 
-					    error_field.Text = "Wrong username or password";
-					    error_field.ForeColor = System.Drawing.Color.Red;
-				    }
-                }
+					try
+					{
+						var responseString = url
+							.PostUrlEncodedAsync(new { name = Globals.nickname, password = Globals.password })
+							.ReceiveString();
+						if (responseString.Result != null)
+						{
+							dynamic data = JObject.Parse(responseString.Result);
+							string status = data.Status;
+							if (status == "200")
+							{
+								Globals.cookie = data.id;
+								error_field.Text = "Logged in!";
+								error_field.ForeColor = System.Drawing.Color.Green;
+								Hide();
+								Form2 frm2 = new Form2();
+								frm2.Show();
+							}
+							else
+							{
+								error_field.Text = "Wrong username or password";
+								error_field.ForeColor = System.Drawing.Color.Red;
+							}
+						}
+						else
+						{
+							error_field.Text = "Empty Response!";
+							error_field.ForeColor = System.Drawing.Color.Red;
+						}
+					}
+					catch (FlurlHttpException ex)
+					{
+						error_field.Text = "Error: "+ex;
+						error_field.ForeColor = System.Drawing.Color.Red;
+					}
+				}
             }
             else
             {

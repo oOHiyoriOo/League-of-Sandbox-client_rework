@@ -35,3 +35,4 @@ K:\Client\Client\Client\obj\Debug\Client.csproj.CopyComplete
 K:\Client\Client\Client\obj\Debug\Client.exe
 K:\Client\Client\Client\obj\Debug\Client.pdb
 K:\Client\Client\Client\obj\Debug\Client.Form2.resources
+D:\Client\Client\Client\obj\Debug\Client.Form2.resources

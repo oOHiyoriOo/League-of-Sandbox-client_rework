@@ -56,7 +56,7 @@ namespace Client
                 .PostUrlEncodedAsync(new { m = "r", name = Globals.nickname})
                 .ReceiveString();
 
-            string raw_data = responseString.Result.Replace("\\n","").Replace("\\","");
+			string raw_data = responseString.Result; //.Replace("\\n","").Replace("\\","");
             dynamic data = JObject.Parse(raw_data);
             string error = data.error;
             if(error == "False")
