@@ -33,6 +33,8 @@ namespace Client
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			error_field.Text = ""; //RESET ERROR TEXT
+			serr.Visible = false;
 		}
 
 
@@ -106,11 +108,17 @@ namespace Client
 							error_field.ForeColor = System.Drawing.Color.Red;
 						}
 					}
-					catch (FlurlHttpException ex)
+					catch (Exception ex)
 					{
-						error_field.Text = "Error: "+ex;
+						Globals.lerr = ex.ToString();
+
+						error_field.Text = "Theres an error try again \n or take a look on the log: ";
 						error_field.ForeColor = System.Drawing.Color.Red;
+						serr.Visible = true;
+						serr.Enabled = true;
+
 					}
+					
 				}
             }
             else
@@ -152,17 +160,22 @@ namespace Client
 			Globals.server = server_field.Text;
 			valid_login_data();
 		}
+
+		private void serr_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("Last Knows Error: \n"+Globals.lerr);
+		}
 	}
 
 
 	// Global Vars all in one place
 	public static class Globals
 	{
-
 		public static String server = ""; // Modifiable
 		public static String nickname = ""; // Modifiable
 		public static String password = ""; // Modifiable
 		public static String cookie = ""; // Modifiable
         public static String user = ""; // Modifiable
+		public static String lerr = "";
 	}
 }

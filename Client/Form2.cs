@@ -52,11 +52,16 @@ namespace Client
         {
             // laod user information on start.
             string url = Globals.server + "/api/?api=user";
+            string url2 = Globals.server + "/queue/";
             var responseString = url
                 .PostUrlEncodedAsync(new { m = "r", name = Globals.nickname})
                 .ReceiveString();
 
-			string raw_data = responseString.Result; //.Replace("\\n","").Replace("\\","");
+            // define Game modes
+            dynamic modes = url2.GetJsonListAsync();
+            MessageBox.Show(string.Concat(modes.Result));
+
+            string raw_data = responseString.Result; //.Replace("\\n","").Replace("\\","");
             dynamic data = JObject.Parse(raw_data);
             string error = data.error;
             if(error == "False")
@@ -121,5 +126,10 @@ namespace Client
 		{
 
 		}
-	}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+    }
 }
