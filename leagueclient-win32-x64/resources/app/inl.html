@@ -1,0 +1,296 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="assets/css/inl2.css">
+        <script src="assets/js/jq3.3.1.js"></script>
+        <script src="assets/js/spells.js"></script>
+    </head>
+    <body onload="user();">
+        <div id="greyout">
+
+        </div>
+        <div id="left">
+            <fieldset id="Profile">
+                <p style="color:red;" >Rank and Honor Are Not Implemented yet</p>
+                <legend>Profile</legend>
+                <table>
+                    <tr>
+                        <td><label>Name: </label></td>
+                        <td>@name</td>
+                    </tr>
+                    <tr>
+                        <td><label>Level</label></td>
+                        <td><select>
+                            <option>Bronze</option>
+                            <option>Silber</option>
+                            <option>Gold</option>
+                            <option>Diamond</option>
+                            <option>Platin</option>
+                            <option>Challenger</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label>Honor</label></td>
+                        <td><select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label>Server</label></td>
+                        <td>@server</td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset id="Friends">
+                <legend>Friends</legend>
+                <table>
+                    <tr>
+                        <td><label>You</label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Have</label></td>
+                    </tr>
+                    <tr>
+                        <td><label>No Friends</label></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset id="About">
+                <legend>About</legend>
+                <table>
+                    <tr>
+                        <td><label>Development: </label></td>
+                    </tr>
+                    <tr>
+                        <td><img id="left" style="border-radius:50%;width: 10%;margin: 0;" src="https://pbs.twimg.com/profile_images/983929352302878722/jvx_P_B1_400x400.jpg" ><a target="_blank" style="font-size:20px;text-align:left;" href="https://twitter.com/xXLucy_NyuXx">ZeroTwo</a></td>
+                    </tr>
+                    <tr>
+                        <td><label>Design: </label></td>
+                    </tr>
+                    <tr>
+                        <td><img id="left" style="border-radius:50%;width:10%;" src="https://cdn.discordapp.com/avatars/514396201525968897/2ec6f6bcb2f272619040c6f49577f3dc.png?size=128"> <a style="font-size:20px;text-align:left;" href="mailto:hopelessman123@outloook.com">Foxy</a></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+
+        <div id="right">
+            <fieldset id="Chat-field">
+                <legend>Chat</legend>
+                    <!-- <div id="Chat-tab" class="tabcontent">
+                        <h3>Chat</h3>
+                        <hr>
+                        
+                        <div style="height: 110px;overflow: hidden;" id="Chat">
+                        </div>
+                
+                        <form id="chatbox" onSubmit="JavaScript:sendmsg()">
+                            <input id="name" type="hidden" value="@name" name="name">
+                            <input id="msg" type="text" placeholder="Message" name="msg" required>
+                        </form>
+                
+                    </div> -->
+                <iframe src="https://titanembeds.com/embed/520129495823286273?username=@name" height="100%" width="100%" frameborder="0"></iframe>
+            </fieldset>
+
+
+            <fieldset id="Play">
+                <legend>Play</legend>
+                <table style="width: 100%;text-align:center;">
+                    <tr>
+                            <td><label>Set Champion</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!-- Champion select -->
+                            <img onclick="setchamp('Akali');" class="Akali" id="selected" alt="Akali" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Akali.png">
+                            <img onclick="setchamp('Annie');" class="Annie" alt="Annie" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Annie.png">
+                            <img onclick="setchamp('Blitzcrank');" class="Blitzcrank" alt="Blitzcrank" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Blitzcrank.png">
+                            <img onclick="setchamp('Caitlyn');" class="Caitlyn" alt="Caitlyn" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Caitlyn.png">
+                            <img onclick="setchamp('Evelynn');" class="Evelynn" alt="Evelynn" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Evelynn.png">
+                            <img onclick="setchamp('Ezreal');" class="Ezreal" alt="Ezreal" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Ezreal.png">
+                            <img onclick="setchamp('Gangplank');" class="Gangplank" alt="Gangplank" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Gangplank.png">
+                            <img onclick="setchamp('Garen');" class="Garen" alt="Garen" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Garen.png">
+                            <img onclick="setchamp('Graves');" class="Graves" alt="Graves" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Graves.png">
+                            <img onclick="setchamp('Karthus');" class="Karthus" alt="Karthus" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Karthus.png">
+                            <img onclick="setchamp('Kassadin');" class="Kassadin" alt="Kassadin" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Kassadin.png">
+                            <img onclick="setchamp('Lucian');" class="Lucian" alt="Lucian" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Lucian.png">
+                            <img onclick="setchamp('Lulu');" class="Lulu" alt="Lulu" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Lulu.png">
+                            <img onclick="setchamp('Lux');" class="Lux" alt="Lux" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Lux.png">
+                            <img onclick="setchamp('MasterYi');" class="MasterYi" alt="MasterYi" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/MasterYi.png">
+                            <img onclick="setchamp('Olaf');" class="Olaf" alt="Olaf" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Olaf.png">
+                            <img onclick="setchamp('Teemo');" class="Teemo" alt="Teemo" style="width:32px;height:32px;" draggable="false" src="assets/img/champions/Teemo.png">
+                            <hr width="100%">
+                            
+                            <div id="Spells">
+                                <!-- Spell select -->
+                                <img id="spell1" onclick="openspell1();" draggable="false" src="assets/img/spells/Summoner_flash.png">
+                                <img id="spell2" onclick="openspell2();" draggable="false" src="assets/img/spells/Summoner_heal.png"> 
+                        
+                                <div class="hide"  id="spellset1">
+                                    <img id="Boost" onclick="usespell('Boost');" draggable="false" src="assets/img/spells/Summoner_Boost.png"> 
+                                    <img id="Clairvoyance" onclick="usespell('Clairvoyance');" draggable="false" src="assets/img/spells/Summoner_Clairvoyance.png"> 
+                                    <img id="Exhaust" onclick="usespell('Exhaust');" draggable="false" src="assets/img/spells/Summoner_Exhaust.png"> 
+                                    <img id="flash" onclick="usespell('flash');" draggable="false" src="assets/img/spells/Summoner_flash.png"> 
+                                    <img id="haste" onclick="usespell('haste');" draggable="false" src="assets/img/spells/Summoner_haste.png">  
+                                    <img id="heal" onclick="usespell('heal');" draggable="false" src="assets/img/spells/Summoner_heal.png">  
+                                    <img id="revive" onclick="usespell('revive');" draggable="false" src="assets/img/spells/Summoner_revive.png">  
+                                    <img id="smite" onclick="usespell('smite');" draggable="false" src="assets/img/spells/Summoner_smite.png">  
+                                    <img id="teleport" onclick="usespell('teleport');" draggable="false" src="assets/img/spells/Summoner_teleport.png">      
+                                </div>
+                            
+                                <div class="hide"  id="spellset2">
+                                    <img id="Boost" onclick="usespell2('Boost');" draggable="false" src="assets/img/spells/Summoner_Boost.png"> 
+                                    <img id="Clairvoyance" onclick="usespell2('Clairvoyance');" draggable="false" src="assets/img/spells/Summoner_Clairvoyance.png"> 
+                                    <img id="Exhaust" onclick="usespell2('Exhaust');" draggable="false" src="assets/img/spells/Summoner_Exhaust.png"> 
+                                    <img id="flash" onclick="usespell2('flash');" draggable="false" src="assets/img/spells/Summoner_flash.png"> 
+                                    <img id="haste" onclick="usespell2('haste');" draggable="false" src="assets/img/spells/Summoner_haste.png">  
+                                    <img id="heal" onclick="usespell2('heal');" draggable="false" src="assets/img/spells/Summoner_heal.png">  
+                                    <img id="revive" onclick="usespell2('revive');" draggable="false" src="assets/img/spells/Summoner_revive.png">  
+                                    <img id="smite" onclick="usespell2('smite');" draggable="false" src="assets/img/spells/Summoner_smite.png">  
+                                    <img id="teleport" onclick="usespell2('teleport');" draggable="false" src="assets/img/spells/Summoner_teleport.png">     
+                                </div>
+                                <hr>
+                                <input type="submit" id="play_btn" Value="Play">
+                            </div>
+
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </body>
+    <footer>
+            <script>
+                //Set Default Spells
+                localStorage.setItem('champ', "Akali");
+                localStorage.setItem('spell1', "flash");
+                localStorage.setItem('spell2', "heal");
+
+                    function setchamp(val){
+                        localStorage.setItem('champ', val);
+                        $("#selected").attr("id","");
+                        $("."+val).attr("id","selected");
+                    }
+
+                    function setspell(val){
+                        localStorage.setItem('spell', val);
+                        $("#select").attr("id","");
+                        $("."+val).attr("id","select");
+                    }
+
+                    function setspell(val){
+                        localStorage.setItem('spell', val);
+                        $("#select").attr("id","");
+                        $("."+val).attr("id","select");
+                    }
+                    
+                    // Start Updater
+                    // setTimeout(update, 1000);
+                    
+                    // disable Img drag and drop
+                    $('img').on('dragstart', function(event) { event.preventDefault(); });
+                    
+                    // prevent side from relaod on submit ( chat )
+                    $("#chatbox").submit(function(e) {
+                      e.preventDefault();
+                    });
+                    
+                    function createCORSRequest(method, url){
+                        var xhr = new XMLHttpRequest();
+                        if ("withCredentials" in xhr){
+                          // XHR has 'withCredentials' property only if it supports CORS
+                          xhr.open(method, url, true);
+                        } else if (typeof XDomainRequest != "undefined"){ // if IE use XDR
+                          xhr = new XDomainRequest();
+                          xhr.open(method, url);
+                        } else {
+                          xhr = null;
+                        }
+                        return xhr;
+                      }
+                    
+                    
+                    function sendmsg(){
+                        var ad = localStorage.getItem('server_adress');
+                    
+                        var msg = $('#msg').val();
+                        var name = $('#name').val();
+                        var find = "&";
+                        var regex = new RegExp(find, "g");
+                        var nach = msg.replace(regex, "und");
+                    
+                        var find = ":";
+                        var regex = new RegExp(find, "g");
+                        var nach = msg.replace(regex, "*");
+                    
+                        var request = createCORSRequest( "get", ad+":91/?send=1&name="+name+"&msg="+nach );
+                        if ( request ){
+                            // Define a callback function
+                            request.onload = function(){};
+                            // Send request
+                            request.send();
+                        }
+                        setTimeout(update, 0);
+                        bot();
+                    }
+                    
+                    function update(){  
+                      var ad = localStorage.getItem('server_adress');
+                    
+                      $.getJSON(ad+':91', function (data) {
+                        
+                        $("#Chat").html("<hr>");
+                        var i = 0;
+                        for ( each in data[0]['chat']){
+                          $("#Chat").append("<tr><td><p style='text-align: left;'>" + data[0]['chat'][i]['name']+": "+data[0]['chat'][i]['msg']+ "</p></td></tr>");
+                          i++;
+                        }
+                        $("#Chat").append("<hr>");
+                        });
+                        setTimeout(update, 1000);
+                        bot();
+                    }
+                    
+                    // Scrolling
+                    function bot() {
+                      var elem = document.getElementById('Chat');
+                      elem.scrollTop = elem.scrollHeight;
+                    }
+                    
+                    function gettab(evt, tab) {
+                      // Declare all variables
+                      var i, tabcontent, tablinks;
+                    
+                      // Get all elements with class="tabcontent" and hide them
+                      tabcontent = document.getElementsByClassName("tabcontent");
+                      for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                      }
+                    
+                      // Get all elements with class="tablinks" and remove the class "active"
+                      tablinks = document.getElementsByClassName("tablinks");
+                      for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                      }
+                    
+                      // Show the current tab, and add an "active" class to the button that opened the tab
+                      document.getElementById(tab).style.display = "block";
+                      evt.currentTarget.className += " active";
+                    }
+                    
+                      // === Set User and server ( could be helpfull) === //
+                    
+                    function user(){
+                    document.body.innerHTML = document.body.innerHTML.replace(/@name/g, localStorage.getItem('user_name'));
+                    document.body.innerHTML = document.body.innerHTML.replace(/@server/g, localStorage.getItem('server_adress'));
+                    }
+                    
+                    </script>
+    </footer>
+</html>

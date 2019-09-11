@@ -1,0 +1,104 @@
+html {
+    overflow: hidden;
+    user-select: none;
+}
+
+.greyout {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.801);
+    top: 0px;
+    left: 0px;
+}
+
+body{
+    background-image: url("../img/bg.jpg");
+    background-size: 100%;
+    color: white;
+    margin: 1%;
+}
+body a {
+    color: purple;
+}
+body fieldset{
+    
+    border-top: 19px solid purple;
+}
+body legend {
+    text-align: center;
+    background-color: purple;
+    margin: 0;
+    width: 100%;
+    color: white;
+}
+
+#left{
+    float: left;
+    width: 30%;
+}
+#right {
+    margin-right: 2%;
+    float: right;
+    width: 64%;
+}
+
+/* Left */
+#Profile {
+    background-color:#252526;
+    height: 20%;
+    width: 100%;
+}
+#Friends {
+    
+    background-color:#252526;
+    height: 30%;
+    width: 100%;
+}
+#About {
+    
+    background-color:#252526;
+    height: 30%;
+    width: 100%;
+}
+
+/* Right */
+#Chat-field {
+    
+    background-color:#252526;
+    height: 50%;
+    width: 100%;
+    margin-bottom: 1%;
+}
+#Chat label{
+    position: absolute;
+    margin-top: -10px;
+}
+#Play {
+    
+    background-color: #252526;
+    height: 40%;
+    width: 100%;
+}
+#selected {
+    border: 1px solid gold;
+}
+#select {
+    border: 1px solid gold;
+}
+
+/* Spells Css */
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+#Spells img {
+    border-radius: 50%;
+    width: 5%;
+}
+#Spells img:hover {
+    filter:brightness(150%);
+}

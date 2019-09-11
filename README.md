@@ -2,35 +2,41 @@
 # Leaue_sandbox_client
 
 ## Planned Features:
-  - ~~Login~~
-  - ~~Custom Server Connections~~
+  - Login
+  - Custom Server Connections
   - Queue
   - Game start
 
 ## Status:
-  - Login: The server was also reworked due to some errors so there's a new finished login
-  - Server: Iam working in queues currently
+  - Login: I need to implement it again ;-; sry
+  - Server: Working on login
   
 
 
 ## Team:
-> Development:
-> [Zero Two#5019](https://discord.gg/yxh7wpR),
+> Development:\
+> [Zero Two#5019](https://discord.gg/yxh7wpR),\
 > [KdaAhri](https://twitter.com/kdaahri)
 
-> Design and Ideas:
+> Mental assistance and bad influx: \
+> omni#8072
+
+> Design and Ideas:\
 > FoxBox#3774
 
-> Tests and testing:
+> Tests and testing:\
 > Syncx#3238
 
 ### used leanguages:
 
-* ~~[Html](https://de.wikipedia.org/wiki/Hypertext_Markup_Language) - Für das Design.~~
-* ~~[Js](https://de.wikipedia.org/wiki/JavaScript) - Hilft bei der verbindung von html und c# (außerdem einige funktionen).~~
+#### Back to the start Xddd == back to js and html / css
+
+* [Html](https://de.wikipedia.org/wiki/Hypertext_Markup_Language) - Für das Design.
+* [Js](https://de.wikipedia.org/wiki/JavaScript) - Hilft bei der verbindung von html und c# (außerdem einige funktionen).
+
 * ~~[c#](https://de.wikipedia.org/wiki/C-Sharp) - Hauptfunktionen und der "Rahmen" des programmes.~~
 * ~~[Visual Basic](https://de.wikipedia.org/wiki/Visual_Basic) - Kompletter programm Ablauf + Design~~
-* [C-Sharp](https://de.wikipedia.org/wiki/C-Sharp) - Programm is now in C-Sharp
+* ~~ [C-Sharp](https://de.wikipedia.org/wiki/C-Sharp) - Programm was in C-Sharp ~~
 ### Installation
 
 ```sh
