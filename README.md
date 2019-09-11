@@ -15,7 +15,7 @@
 
 ## Team:
 > Development:\
-> [Zero Two#5019](https://discord.gg/yxh7wpR),\
+> [ZéroTwó#5019](https://discord.gg/yxh7wpR),\
 > [KdaAhri](https://twitter.com/kdaahri)
 
 > Mental assistance and bad influx: \
