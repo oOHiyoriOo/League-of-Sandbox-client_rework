@@ -40,6 +40,6 @@
 ### Installation
 
 ```sh
-Currently there's no release but u can take a look into /bin/debug/ there should be an .exe file
+Currently there's no release!
 ```
 
