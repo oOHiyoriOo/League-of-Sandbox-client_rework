@@ -11,8 +11,12 @@
   "dependencies": {
     "custom-electron-titlebar": "^3.1.0",
     "download": "^7.1.0",
-    "electron": "^7.2.4",
+    "electron": "^7.3.2",
+    "fs": "0.0.1-security",
     "jquery": "^3.5.0",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "url": "^0.11.0",
     "urlencode": "^1.1.0"
   }
 }

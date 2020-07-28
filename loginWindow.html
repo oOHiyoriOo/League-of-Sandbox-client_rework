@@ -1,9 +1,8 @@
 <!DOCTYPE html>
     <html>
         <head>
-            <title>ming's Sandbox Launcher</title>
-            <link rel="stylesheet" type="text/css" href="https://leaguesandbox.ga/css/main.css">
-            <!-- <script src="https://leaguesandbox.ga/js/jq.js"></script> -->
+            <title>Sandbox Launcher</title>
+            <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
             <script>window.$ = window.jQuery = require('jquery');</script>
             
         </head>
@@ -36,7 +35,7 @@
 
                     <div class="hide" id="loading">
                         <h3>You are in the Queue</h3>
-                        <img src="https://leaguesandbox.ga/img/loading (1).gif">
+                        <img src="./assets/img/loading (1).gif">
                     </div>
 
 
@@ -59,21 +58,16 @@
 
 
             // === BACKGROUND (CURRENTLY HARDCODED) === //
-            /* */   var gif = getRandomInt(1,6);    /* */
+            /* */   var gif = getRandomInt(1,7);    /* */
             //==========================================//
-
-            
-            function sgif(){
-                //$('body').addClass("video"+gif);
-                console.log("Set bg")
-            }
-            sgif();
+            $('body').addClass("video"+gif);
+            console.log("Set bg")
             
             $('input:checkbox').change(function(){
                 if($(this).is(":checked")) {
-                    $('body').removeClass(vg);
+                    $('body').removeClass("video"+gif);
                 } else {
-                    $('body').addClass(vg);
+                    $('body').addClass("video"+gif);
                 }
             });
 
@@ -104,12 +98,12 @@
 
             // get error msg from frame and display it.
             ipcRenderer.on('error:show',(e, msg) => {
-                console.log(msg)
+                $('#loading').addClass('hide');
                 $('#lerror').html('<h6 style="color:red;">'+msg+"</h6>")
                 $('#lerror').removeClass('hide');
                 setTimeout(() => {
                     $('#lerror').addClass('hide');
-                }, 5000);
+                }, 10000);
             })
         </script>
         <style>

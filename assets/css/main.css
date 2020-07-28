@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding:0;
     background-color: black;
-    background-image: url("https://leaguesandbox.ga/img/bg.jpg");
+    background-image: url("../img/bg.jpg");
     background-repeat:no-repeat;
     background-size: 100%;
 }
@@ -80,7 +80,7 @@ body {
 /* Yes the Video Backgrounds are made in css lol */
 .video1 {
     margin: 0 auto;
-    background-image: url("https://leaguesandbox.ga/img/login/1.gif");
+    background-image: url("../img/login/1.gif");
     /* width: 100%; */
     height: 100vh;
     overflow: hidden;
@@ -92,7 +92,7 @@ body {
 }
 .video2 {
     margin: 0 auto;
-    background-image: url("https://leaguesandbox.ga/img/login/2.gif");
+    background-image: url("../img/login/2.gif");
     /* width: 100%; */
     height: 100vh;
     overflow: hidden;
@@ -104,7 +104,7 @@ body {
 }
 .video3 {
     margin: 0 auto;
-    background-image: url("https://leaguesandbox.ga/img/login/3.gif");
+    background-image: url("../img/login/3.gif");
     /* width: 100%; */
     height: 100vh;
     overflow: hidden;
@@ -116,7 +116,7 @@ body {
 }
 .video4 {
     margin: 0 auto;
-    background-image: url("https://leaguesandbox.ga/img/login/4.gif");
+    background-image: url("../img/login/4.gif");
     /* width: 100%; */
     height: 100vh;
     overflow: hidden;
@@ -128,7 +128,7 @@ body {
 }
 .video5 {
     margin: 0 auto;
-    background-image: url("https://leaguesandbox.ga/img/login/5.gif");
+    background-image: url("../img/login/5.gif");
     /* width: 100%; */
     height: 100vh;
     overflow: hidden;
@@ -140,7 +140,7 @@ body {
 }
 .video6 {
     margin: 0 auto;
-    background-image: url("https://leaguesandbox.ga/img/login/6.gif");
+    background-image: url("../img/login/6.gif");
     /* width: 100%; */
     height: 100vh;
     overflow: hidden;
@@ -151,6 +151,18 @@ body {
     background-size: 100%;
 }
 
+.video7 {
+    margin: 0 auto;
+    background-image: url("../img/login/7.gif");
+    /* width: 100%; */
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-repeat:no-repeat;
+    background-size: 100%;
+}
 
 /* Just copy a existing bg class for your own or replace the original gif */
 
