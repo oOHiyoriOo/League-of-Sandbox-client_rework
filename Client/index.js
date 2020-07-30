@@ -1,11 +1,10 @@
 console.clear()
 
 const electron = require('electron');
-const url = require('url');
+const urlModule = require('url');
 const path = require('path');
 const fs = require('fs');
-const download = require('download');
-const request = require('request');
+const smith = require('superagent');
 const urlencode = require('urlencode');
 
 const {app, BrowserWindow, Menu, ipcMain} = electron;
@@ -28,19 +27,22 @@ try {
 }
 // 2. Let's check for a config // create one if needed.
 if (fs.existsSync(AppDataConfig)) {
-    cfg = JSON.parse(fs.readFileSync(AppDataConfig,encoding='utf-8'))
-    console.log(cfg)
+    try {
+        cfg = JSON.parse(fs.readFileSync(AppDataConfig,encoding='utf-8'))
+    }catch(e){
+        config = '{"screenx": 1024,"screeny": 576}'
+        fs.writeFile(AppDataConfig, config,encoding='utf-8', function (err) {
+            if (err) throw "Config Creation error!: "+err
+            cfg = JSON.parse(fs.readFileSync(AppDataConfig,encoding='utf-8'))
+        })
+    }
 }else{
     config = '{"screenx": 1024,"screeny": 576}'
     fs.writeFile(AppDataConfig, config,encoding='utf-8', function (err) {
         if (err) throw "Config Creation error!: "+err
-    });
-    cfg = JSON.parse(fs.readFileSync(AppDataConfig,encoding='utf-8'))
-    console.log(cfg)
+        cfg = JSON.parse(fs.readFileSync(AppDataConfig,encoding='utf-8'))
+    })
 }
-
-
-//fileData = fs.readFileSync(process.env.APPDATA + '/folder/file.txt',{encoding:'utf8'});
 
 ////////////////////////////////////
 //Helper Functions
@@ -51,15 +53,6 @@ function configSave(){
         if (err) throw "Config Creation error!: "+err
     });
 }
-
-
-
-
-// if (fs.existsSync('assets')) {
-    // download('http://unicorn.com/foo.jpg', 'dist').then(() => {
-    //     console.log('done!');
-    // });
-// }
 
 // Listen for app to be ready
 app.on('ready', function(){
@@ -74,11 +67,13 @@ app.on('ready', function(){
         }
     });
     //load html file (UI)
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'loginWindow.html'),
+    mainWindow.loadURL(urlModule.format({
+        pathname: path.join(__dirname, 'mainFrame.html'),
         protocol: 'file',
         slashes: true
-    }));
+    })).then(() => {
+        mainWindow.webContents.send('page:load',"loginWindow.html");
+    })
     //quit app on exizt
     mainWindow.on('closed',function(){
         app.quit();
@@ -94,42 +89,39 @@ app.on('ready', function(){
 
 // catch login data
 ipcMain.on('login:send',function(e, loginData){
-    console.log("Received: "+ JSON.stringify(loginData))
-    
+
     if(loginData.server.includes("http") || loginData.server.includes('https')){
         server = loginData.server
     }else{
         server = "http://"+loginData.server
-        // mainWindow.webContents.send('error:show','Setting Protocoll to http.')
     }
 
-    loginData.name = urlencode(loginData.name)
+    var url = server+'/user.login'
 
-    var url = server+'/api/login/'
-    var options = {
-        method: 'post',
-        body: loginData,
-        json: true,
-        url: url
-    }
 
-    request(options, function (err, res, body) {
-        if (err) {
-            console.error('error posting json: ', err)
-            mainWindow.webContents.send('error:show','Connection error: '+err)
-        }else{
-            var headers = res.headers
-            var statusCode = res.statusCode
-            // console.log('headers: ', headers)
-            // console.log('statusCode: ', statusCode)
-            // console.log('body: ', body)
-            console.log(body)
-            // var response = JSON.parse(body)
-            // if(response.error == true){
-            //     mainWindow.webContents.send('error:show',response.msg)
-            // }
-        }
-    })
+    smith
+        .post(url)
+        .send(loginData)
+        .set('accept', 'json')
+        .end((err, res) => {
+            if (err) {
+                // console.error('error posting json: ', err)
+                mainWindow.webContents.send('error:show','Connection error: '+err)
+            }else{
+                
+                var res = res.body
+                console.log(res)
+                if(res.error == true){
+                    mainWindow.webContents.send('error:show',res.msg)
+                }else{
+                    cfg.token = res.token; // svae the token
+                    configSave(); // save it
+                    
+                    mainWindow.webContents.send('save:user',data)
+                    mainWindow.webContents.send('page:load',"mainWindow.html")
+                }
+            }
+        });
 })
 
 
@@ -201,10 +193,6 @@ if(process.env.NODE_ENV !== 'production'){
                     focusedWindow.toggleDevTools();
                 }
             },
-            {
-                role:'reload',
-                accelerator: 'F5'
-            }
         ]
     });
 }

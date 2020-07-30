@@ -1,119 +1,43 @@
-<!DOCTYPE html>
-    <html>
-        <head>
-            <title>Sandbox Launcher</title>
-            <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
-            <script>window.$ = window.jQuery = require('jquery');</script>
-            
-        </head>
-    <body class="video">
-        <div id="wrap">
-            <div class="lbg">
-                
-                <div id="content">
-                    <h1>LeagueSandbox Client</h1>
-                    <form id="loginForm" autocomplete="off">
-                        <input type="text" id="nickname" name="nickname" placeholder="Nickname" ><br>
-                        <input type="password" id="password" name="password" placeholder="Password" ><br>
-                        <input type="text" id="server" name="server" placeholder="server ip" ><br>
-                        <input id="login_btn" class="login_btn" type="submit" value="Login" />
-                    </form>
-                    <script>
-                            $(document).ready(function() {
-                                $(window).keydown(function(event){
-                                  if(event.keyCode == 13) {
-                                    event.preventDefault();
-                                    return false;
-                                  }
-                                });
-                              });
-                    </script>
-                    
-                    <div class="hide" id="lerror"> 
-                        <!-- Shows errors here. -->
-                    </div>
+<body class="video">
+    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+    <div id="wrap">
+        <div class="lbg">
+            <div id="content">
+                <h1>LeagueSandbox Client</h1>
+                <form id="loginForm" autocomplete="off">
+                    <input type="text" id="nickname" name="nickname" placeholder="Nickname"><br>
+                    <input type="password" id="password" name="password" placeholder="Password"><br>
+                    <input type="text" id="server" name="server" placeholder="server ip"><br>
+                    <input id="login_btn" class="login_btn" type="submit" value="Login" />
+                </form>
 
-                    <div class="hide" id="loading">
-                        <h3>You are in the Queue</h3>
-                        <img src="./assets/img/loading (1).gif">
-                    </div>
+                <div class="hide" id="lerror">
+                    <!-- Shows errors here. -->
+                </div>
 
+                <div class="hide" id="loading">
+                    <h3>You are in the Queue</h3>
+                    <img src="./assets/img/loading (1).gif">
+                </div>
+                <br><br>
+                <div id="videobg">
+                    <a alt="Report a Bug" title="Report a Bug" href="mailto:xxNyu.LucyXx@gmail.com">Report a Bug</a><br>
 
-                    <br><br>
-                    <div id="videobg">
-                            <a alt="Report a Bug" title="Report a Bug" href="mailto:xxNyu.LucyXx@gmail.com">Report a Bug</a><br>
-
-                        <input type="checkbox" id="videobgb" value="videobgb">Disable Video Background<br>
-                    </div>
+                    <input type="checkbox" id="videobgb" value="videobgb">Disable Video Background<br>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script>
-            function getRandomInt(min, max) {
-                min = Math.ceil(min);
-                max = Math.floor(max);
-                return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
+    <script src="assets/js/login.js"></script>
 
+    <style>
+        html {
+            overflow: hidden;
+        }
+    </style>
+    <!-- black Filter -->
+    <div class="greyout">
+    </div>
 
-            // === BACKGROUND (CURRENTLY HARDCODED) === //
-            /* */   var gif = getRandomInt(1,7);    /* */
-            //==========================================//
-            $('body').addClass("video"+gif);
-            console.log("Set bg")
-            
-            $('input:checkbox').change(function(){
-                if($(this).is(":checked")) {
-                    $('body').removeClass("video"+gif);
-                } else {
-                    $('body').addClass("video"+gif);
-                }
-            });
-
-
-
-            // TITLE BAR
-            const electron = require('electron')
-            const customTitlebar = require('custom-electron-titlebar');
-
-            const {ipcRenderer} = electron
-
-            new customTitlebar.Titlebar({
-                backgroundColor: customTitlebar.Color.fromHex('#0b113171'),
-                maximizable: false
-            });
-
-            document.querySelector('#loginForm').addEventListener('submit', (e) => {
-                e.preventDefault();
-                data = {}
-                data.name = document.querySelector('#nickname').value;
-                data.password = document.querySelector('#password').value;
-                data.server = document.querySelector('#server').value;
-
-                ipcRenderer.send('login:send', data);
-
-                $('#loading').removeClass('hide');
-            })
-
-            // get error msg from frame and display it.
-            ipcRenderer.on('error:show',(e, msg) => {
-                $('#loading').addClass('hide');
-                $('#lerror').html('<h6 style="color:red;">'+msg+"</h6>")
-                $('#lerror').removeClass('hide');
-                setTimeout(() => {
-                    $('#lerror').addClass('hide');
-                }, 10000);
-            })
-        </script>
-        <style>
-            html {
-                overflow: hidden;
-            }
-        </style>
-        <!-- black Filter -->
-        <div class="greyout">
-        </div>
-    
-    </body>
-</html>
+</body>

@@ -1,0 +1,1 @@
+mongod.exe -bind_ip_all --auth --dbpath %cd%\DB 
